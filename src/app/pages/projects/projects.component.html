@@ -1,0 +1,30 @@
+<section class="py-10 px-4 bg-gray-900 text-white w-full">
+  <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 pt-8">
+    <div 
+      *ngFor="let project of projects" 
+      class="bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300"
+    >
+      <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
+      <p class="text-gray-400 text-sm mb-4">{{ project.description }}</p>
+
+      <div class="flex flex-wrap gap-2 text-xs text-gray-300 mb-4">
+        <span 
+          *ngFor="let tech of project.stack" 
+          class="bg-gray-700 px-2 py-1 rounded"
+        >
+          {{ tech }}
+        </span>
+      </div>
+
+      <button 
+        class="text-sm text-blue-400 hover:underline"
+        (click)="openModal(project)"
+      >
+        View Details →
+      </button>
+    </div>
+  </div>
+</section>
+

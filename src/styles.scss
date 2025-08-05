@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
+
+:root {
+    --title-font: ''
+}
+
+.mogra-regular {
+  font-family: "Mogra", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #d1d5db !important;
+}
+
