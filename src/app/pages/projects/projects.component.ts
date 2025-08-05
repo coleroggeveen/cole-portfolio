@@ -46,7 +46,7 @@ export class ProjectsComponent {
       title: 'This Website',
       description: 'A portfolio website built using Angular and Tailwind CSS.',
       stack: ['Angular', 'Tailwind', 'GitHub Pages'],
-      link: 'https://yourapp.com'
+      link: 'https://github.com/coleroggeveen/cole-portfolio'
     },
     // Add more projects...
   ];
