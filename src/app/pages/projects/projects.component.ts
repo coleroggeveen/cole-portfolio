@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ModalComponent } from '../../modal/modal.component';
+import { CarouselComponent } from '../../carousel/carousel.component';
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ModalComponent, CarouselComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
-  activeProject: any = null;
+  showModal = false;
+  selectedProject: any = null;
 
   projects = [
     {
@@ -22,13 +25,13 @@ export class ProjectsComponent {
       title: 'AI Support Bot',
       description: 'A support chatbot trained to use our Capstone sponsor\'s training documentation. There are only screenshots but the frontend is built with Angular, which calls the Dialogflow API.',
       stack: ['Angular', 'Node', 'Google Dialogflow CX'],
-      link: 'https://yourapp.com'
+      images: ['assets/images/chatbot-photo.PNG', 'assets/images/chatbot-photo2.PNG', 'assets/images/dialogflow-logo.jpg']
     },
         {
       title: 'Hotel Booking Website',
       description: 'A hotel website that you can book rooms on, based on the amount on vacancy and cost. The website features a weather widget that fetches the hotel\'s weather from an API.',
       stack: ['JavaScript', 'JQuery', 'GitHub Pages', 'Bootstrap', 'API Calls'],
-      link: 'https://yourportfolio.com'
+      link: 'https://coleroggeveen.github.io/hotel-website/'
     },
     {
       title: 'Tetris',
@@ -51,12 +54,22 @@ export class ProjectsComponent {
     // Add more projects...
   ];
 
-  openModal(project: any) {
-    this.activeProject = project;
+  openModal() {
+    this.showModal = true;
   }
 
   closeModal() {
-    this.activeProject = null;
+    this.showModal = false;
   }
+
+  handleProjectClick(project: any) {
+  if (project.link) {
+    window.open(project.link, '_blank');
+  } else {
+    this.showModal = true;
+    this.selectedProject = project;
+  }
+}
+
 }
 
