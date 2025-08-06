@@ -19,7 +19,7 @@ export class ProjectsComponent {
       title: 'Portfolio Website',
       description: 'A personal site built to showcase my projects using Bootstrap and CSS.',
       stack: ['CSS', 'Bootstrap', 'GitHub Pages'],
-      link: 'https://yourportfolio.com'
+      link: 'https://coleroggeveen.github.io/bootstrap-portfolio/'
     },
     {
       title: 'AI Support Bot',
@@ -37,13 +37,13 @@ export class ProjectsComponent {
       title: 'Tetris',
       description: 'A Tetris project made using C++.',
       stack: ['C++'],
-      link: 'https://yourapp.com'
+      link: 'https://github.com/coleroggeveen/tetris-game'
     },
         {
       title: 'Text Based Chess Game',
       description: 'A chess game built using C++. You make each move with the command line.',
       stack: ['C++'],
-      link: 'https://yourportfolio.com'
+      link: 'https://github.com/coleroggeveen/chess-game-cpp'
     },
     {
       title: 'This Website',
