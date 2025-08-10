@@ -1,6 +1,6 @@
-<section class="py-10 px-4 bg-gray-900 text-white w-full">
+<section [ngClass]="styleClass" class="pb-8 px-4 text-white w-full fade-in">
   <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
-
+  <!-- projects grid -->
   <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 pt-8">
     <div *ngFor="let project of projects"
       class="bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300">
@@ -12,16 +12,20 @@
           {{ tech }}
         </span>
       </div>
+      <div>
+        <img src="{{ project.thumbnail }}" alt="{{ project.title }}"
+          class="w-full aspect-[4/2] object-cover rounded-lg shadow-lg">
+      </div>
       <button class="text-sm text-blue-400 hover:underline" (click)="handleProjectClick(project)">
         View Details →
       </button>
     </div>
   </div>
-
-  <app-modal *ngIf="selectedProject && showModal" [isOpen]="showModal" (closed)="closeModal()">
-    <h2 class="text-center text-xl font-bold text-black mb-2">{{ selectedProject?.title }}</h2>
-    <p class="text-black pb-6">{{ selectedProject?.description }}</p>
-    <app-carousel [images]="selectedProject?.images"></app-carousel>
-  </app-modal>
-
 </section>
+
+<!-- modal -->
+<app-modal *ngIf="selectedProject && showModal" [isOpen]="showModal" (closed)="closeModal()">
+  <h2 class="text-center text-xl font-bold text-black mb-2">{{ selectedProject?.title }}</h2>
+  <p class="text-black pb-6">{{ selectedProject?.description }}</p>
+  <app-carousel [images]="selectedProject?.images"></app-carousel>
+</app-modal>
