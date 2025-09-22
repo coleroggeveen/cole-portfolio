@@ -17,6 +17,13 @@ export class ProjectsComponent {
 
   projects = [
     {
+      title: 'CrewSafe Web Application',
+      description: 'A personal project where I\'m creating a safety application for construction/manufacturing companies.',
+      stack: ['Angular', 'Tailwind', 'GitHub Pages', 'SupaBase'],
+      link: 'https://coleroggeveen.github.io/crewsafe',
+      thumbnail: 'assets/images/crewsafe.PNG'
+    },
+    {
       title: 'Portfolio Website',
       description: 'A personal site built to showcase my projects using Bootstrap and CSS. Hosted on Github Pages.',
       stack: ['CSS', 'Bootstrap', 'GitHub Pages'],
